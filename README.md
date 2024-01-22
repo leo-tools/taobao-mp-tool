@@ -1,1 +1,1 @@
-# lint-tool
+# tmall-lint-tool
