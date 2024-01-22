@@ -1,5 +1,5 @@
 {
-  "name": "taobao-lint-tool",
+  "name": "taobao-mp-tool",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "taobao-lint-tool": "./bin/index.js"
+    "tmp-tool": "./bin/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leo-tools/taobao-lint-tool.git"
+    "url": "git+https://github.com/leo-tools/taobao-mp-tool.git"
   },
   "keywords": [
     "taobao-mini-programs",
@@ -20,9 +20,9 @@
   "author": "tc9011",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/leo-tools/taobao-lint-tool/issues"
+    "url": "https://github.com/leo-tools/taobao-mp-tool/issues"
   },
-  "homepage": "https://github.com/leo-tools/taobao-lint-tool#readme",
+  "homepage": "https://github.com/leo-tools/taobao-mp-tool#readme",
   "dependencies": {
     "@inquirer/prompts": "^3.3.0",
     "commander": "^11.1.0"
