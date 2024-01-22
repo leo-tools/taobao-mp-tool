@@ -14,16 +14,28 @@ program
   .command('add')
   .description('添加feature')
   .action(async () => {
-    const name = await select({
-      message: '请选择:',
-      choices: [
-        {
-          name: 'lint',
-          value: 'lint'
-        },
-      ]
-    })
-    console.log("feature", name)
+    let name
+    try {
+      name = await select({
+        message: '请选择:',
+        choices: [
+          {
+            name: 'lint',
+            value: 'lint'
+          },
+        ]
+      })
+    } catch (error) {
+      if(error.isTtyError) {
+        console.error('Inquirer cannot run in this environment');
+      } else {
+        // User force closed
+        console.log('Bye!')
+      }
+      return
+    }
+
+    console.log("添加的feature为", name)
     if (name === 'lint') {
       addLint()
     }
