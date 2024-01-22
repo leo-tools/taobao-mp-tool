@@ -3,6 +3,7 @@
 const program = require('commander');
 const { select } = require('@inquirer/prompts');
 const package = require("../package.json");
+const { addLint } = require('./lint')
 
 // 获取版本号
 const version = package.version;
@@ -10,27 +11,22 @@ program.version(version);
 
 // 初始化项目
 program
-  .command('init')
-  .description('初始化项目')
+  .command('add')
+  .description('添加feature')
   .action(async () => {
     const name = await select({
-      message: '请输入项目类型:',
+      message: '请选择:',
       choices: [
         {
-          name: '淘宝小程序(taobao-miniapp)',
-          value: 'taobao-miniapp'
+          name: 'lint',
+          value: 'lint'
         },
-        {
-          name: '淘宝小部件(taobao-livecard)',
-          value: 'taobao-livecard'
-        },
-        {
-          name: '千牛小程序(qianniu-miniapp)',
-          value: 'qianniu-miniapp'
-        }
       ]
     })
-    console.log("项目类型", name)
+    console.log("feature", name)
+    if (name === 'lint') {
+      addLint()
+    }
   });
 
 program.parse(process.argv);
