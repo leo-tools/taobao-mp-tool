@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 const program = require('commander');
-const { select } = require('@inquirer/prompts');
+const { select, input } = require('@inquirer/prompts');
 const package = require("../package.json");
 const { addLint } = require('./lint')
 
@@ -45,9 +45,13 @@ program
   .command('create')
   .description('创建项目')
   .action(async () => {
-    let name
+    let projectName, projectType
     try {
-      const name = await select({
+      const projectName = await input({
+        message: '请输入项目名称:',
+        default: 'mp-project'
+      })
+      const projectType = await select({
         message: '请输入项目类型:',
         choices: [
           {
@@ -64,7 +68,8 @@ program
           }
         ]
       })
-      console.log("项目类型", name)
+      console.log("项目名称", projectName)
+      console.log("项目类型", projectType)
     } catch (error) {
       if(error.isTtyError) {
         console.error('Inquirer cannot run in this environment');
