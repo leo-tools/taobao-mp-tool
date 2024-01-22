@@ -1,5 +1,5 @@
 {
-  "name": "taobao-mp-tool",
+  "name": "@leo-tool/tmp",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,9 @@
   "bin": {
     "tmp": "./bin/index.js"
   },
+  "files": [
+    "bin"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leo-tools/taobao-mp-tool.git"

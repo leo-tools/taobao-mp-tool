@@ -7,7 +7,7 @@ npm install -g @leo-tool/tmp
 
 ## 使用
 
-### 初始化项目
+### 增加 feature
 ```bash
-tmp init
+tmp add
 ```
