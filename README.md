@@ -1,1 +1,1 @@
-# tmall-lint-tool
+# taobao-lint-tool
