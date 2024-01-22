@@ -25,6 +25,7 @@
   "homepage": "https://github.com/leo-tools/taobao-mp-tool#readme",
   "dependencies": {
     "@inquirer/prompts": "^3.3.0",
-    "commander": "^11.1.0"
+    "commander": "^11.1.0",
+    "ora": "^5.4.1"
   }
 }
