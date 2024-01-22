@@ -2,7 +2,7 @@
 
 ## 安装
 ```bash
-npm install -g @leo-tool/tmp
+npm install -g @leo-tools/tmp
 ```
 
 ## 使用
