@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "taobao-lint-tool": "./bin/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leo-tools/taobao-lint-tool.git"
@@ -19,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/leo-tools/taobao-lint-tool/issues"
   },
-  "homepage": "https://github.com/leo-tools/taobao-lint-tool#readme"
+  "homepage": "https://github.com/leo-tools/taobao-lint-tool#readme",
+  "dependencies": {
+    "@inquirer/prompts": "^3.3.0",
+    "commander": "^11.1.0"
+  }
 }
