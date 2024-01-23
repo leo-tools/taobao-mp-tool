@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "build-canal": "canal -i ./ -o ./__canal_dist__ -m canal -p"
+  },
+  "devDependencies": {
+    "@tbmp/mp-cloud-sdk": "*"
+  },
+  "dependencies": {
+    "gio-miniprogram-sdk-cdp": "^3.8.11"
+  }
+}

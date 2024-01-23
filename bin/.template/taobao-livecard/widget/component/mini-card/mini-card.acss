@@ -1,0 +1,23 @@
+@font-face{
+  font-family: 'AlibabaPuHuiTi-2-55-Regular';
+  src: url('https://lego-member.oss-cn-zhangjiakou.aliyuncs.com/fontPack/AlibabaPuHuiTi-2-55-Regular.otf')
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  src: url("https://lego-member.oss-cn-zhangjiakou.aliyuncs.com/lego_gift_recommendation/qianniu_default/Cera_Pro_Black_229dc55fb2.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cera Pro Medium';
+  src: url("https://lego-member.oss-cn-zhangjiakou.aliyuncs.com/lego-gift-recommendation/qianniu_default/Cera%20Pro%20Medium.otf");
+  font-style: normal;
+  font-display: swap;
+}
+
+.card-wrapper {
+  width: 100%;
+  height: 100%;
+}
