@@ -2,6 +2,7 @@ const ora = require('ora')
 const fs = require('fs')
 const { execSync } = require('child_process')
 const {copyFiles} = require('./utils')
+const {input} = require('@inquirer/prompts')
 
 const addLintStaged = (package) => {
   if (!package["lint-staged"]) {
@@ -42,17 +43,51 @@ const addDevDependencies = (package) => {
     package.devDependencies["prettir"] = "3.2.4"
   }
 }
-const addLint  = () =>  {
+const addLint  = async () =>  {
   const loading = ora('正在添加 lint 模板...')
   loading.start()
   const root = process.cwd()
   let packageJSON = require(`${root}/package.json`)
 
-  addDevDependencies(packageJSON)
+  if (!packageJSON) {
+    const projectName = await input({
+      message: '请输入项目名称:',
+      default: 'mp-project'
+    })
+    fs.writeFileSync(`${root}/package.json`, '{\n' +
+      `  "name": "${projectName}",
+` +
+      '  "version": "1.0.0",\n' +
+      '  "main": "",\n' +
+      '  "scripts": {\n' +
+      '    "lint": "eslint --ext .js --fix ./client",\n' +
+      '    "prettier": "prettier --write ./client --ext .js",\n' +
+      '    "prepare": "husky install"\n' +
+      '  },\n' +
+      '  "devDependencies": {\n' +
+      '    "@commitlint/cli": "^18.4.4",\n' +
+      '    "commitlint-config-jira": "^1.6.4",\n' +
+      '    "commitlint-plugin-jira-rules": "^1.6.4",\n' +
+      '    "eslint": "^8.56.0",\n' +
+      '    "eslint-config-prettier": "^9.1.0",\n' +
+      '    "husky": "^8.0.0",\n' +
+      '    "lint-staged": "^15.2.0",\n' +
+      '    "prettier": "3.2.4"\n' +
+      '  },\n' +
+      '  "lint-staged": {\n' +
+      '    "*.{js}": [\n' +
+      '      "eslint --fix",\n' +
+      '      "prettier --write"\n' +
+      '    ]\n' +
+      '  }\n' +
+      '}\n')
+  } else {
+    addDevDependencies(packageJSON)
 
-  addLintStaged(packageJSON)
+    addLintStaged(packageJSON)
 
-  fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
+    fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
+  }
 
   copyFiles(`${__dirname}/.template/lint`, root)
 
