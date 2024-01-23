@@ -30,21 +30,6 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20.8.1
-          registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npx semantic-release
-        env:
-          NPM_TOKEN: ${{secrets.npm_token}}
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
