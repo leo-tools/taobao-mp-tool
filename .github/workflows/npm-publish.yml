@@ -43,7 +43,7 @@ jobs:
       - run: npm ci
       - run: npx semantic-release
         env:
-          NPM_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
   publish-npm:
@@ -58,5 +58,5 @@ jobs:
       - run: npm ci
       - run: npx semantic-release
         env:
-          NPM_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
