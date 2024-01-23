@@ -47,13 +47,22 @@ const addLint  = async () =>  {
   const loading = ora('正在添加 lint 模板...')
   loading.start()
   const root = process.cwd()
-  let packageJSON = require(`${root}/package.json`)
 
-  if (!packageJSON) {
+  if (fs.existsSync(`${root}/package.json`)) {
+    let packageJSON = require(`${root}/package.json`)
+
+    addDevDependencies(packageJSON)
+
+    addLintStaged(packageJSON)
+
+    fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
+  } else {
+    loading.stop()
     const projectName = await input({
       message: '请输入项目名称:',
       default: 'mp-project'
     })
+    loading.start()
     fs.writeFileSync(`${root}/package.json`, '{\n' +
       `  "name": "${projectName}",
 ` +
@@ -81,12 +90,6 @@ const addLint  = async () =>  {
       '    ]\n' +
       '  }\n' +
       '}\n')
-  } else {
-    addDevDependencies(packageJSON)
-
-    addLintStaged(packageJSON)
-
-    fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
   }
 
   copyFiles(`${__dirname}/.template/lint`, root)
