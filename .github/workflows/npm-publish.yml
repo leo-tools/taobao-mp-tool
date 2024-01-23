@@ -1,8 +1,6 @@
-# 工作流名称
-name: Build and Deploy
+name: Deploy
 
 on:
-  # 指明要运行的分支，跟上面配置保持一致
   push:
     branches:
       - master
@@ -23,6 +21,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      # 安装依赖
+      - name: Install
+        run: |
+          npm install
 
       # 执行 semantic-release 发布包
       - name: Release

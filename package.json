@@ -34,5 +34,11 @@
     "@inquirer/prompts": "^3.3.0",
     "commander": "^11.1.0",
     "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.2.6",
+    "@semantic-release/npm": "^11.0.2",
+    "semantic-release": "^23.0.0"
   }
 }
