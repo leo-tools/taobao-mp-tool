@@ -4,11 +4,11 @@ const create = async () => {
   const root = process.cwd()
   let projectName, projectType
   try {
-    const projectName = await input({
+    projectName = await input({
       message: '请输入项目名称:',
       default: 'mp-project'
     })
-    const projectType = await select({
+    projectType = await select({
       message: '请输入项目类型:',
       choices: [
         {
