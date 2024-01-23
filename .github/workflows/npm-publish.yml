@@ -24,11 +24,6 @@ jobs:
         with:
           node-version: 16
 
-      # 安装依赖，包括我们的 semantic-release 全套
-      - name: Install
-        run: |
-          npm install
-
       # 执行 semantic-release 发布包
       - name: Release
         env:
