@@ -54,7 +54,7 @@ const addLint  = () =>  {
 
   fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
 
-  copyFiles(`${root}/.template/lint`, root)
+  copyFiles(`${__dirname}/.template/lint`, root)
 
   try {
     execSync('npm install', { stdio: 'inherit' });
