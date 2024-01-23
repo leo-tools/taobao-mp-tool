@@ -26,25 +26,6 @@ jobs:
       - name: Install
         run: |
           npm install
-        
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 20.8.1
-          registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npx semantic-release
-        env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
   publish-npm:
     needs: build
@@ -54,7 +35,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 20.8.1
-          registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npx semantic-release
         env:
