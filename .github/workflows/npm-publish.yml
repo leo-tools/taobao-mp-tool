@@ -27,33 +27,17 @@ jobs:
         run: |
           npm install
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      # 执行 semantic-release 发布包
+      - name: Release NPM
         with:
-          node-version: 20.8.1
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npx semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Release Github Package Registry
         with:
-          node-version: 20.8.1
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
-      - run: npx semantic-release
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release
