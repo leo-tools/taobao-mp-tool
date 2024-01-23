@@ -27,7 +27,7 @@ const create = async () => {
     })
     console.log("项目名称", projectName)
     console.log("项目类型", projectType)
-    copyFiles(`${root}/.template/${projectType}`, root)
+    copyFiles(`${__dirname}/.template/${projectType}`, root)
   } catch (error) {
     if(error.isTtyError) {
       console.error('Inquirer cannot run in this environment');
