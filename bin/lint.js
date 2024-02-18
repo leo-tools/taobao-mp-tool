@@ -2,7 +2,7 @@ const ora = require('ora')
 const fs = require('fs')
 const { execSync } = require('child_process')
 const {copyFiles} = require('./utils')
-const {input} = require('@inquirer/prompts')
+const {input, select} = require('@inquirer/prompts')
 
 const addLintStaged = (package) => {
   if (!package["lint-staged"]) {
@@ -33,18 +33,46 @@ const addDevDependencies = (package) => {
       "prettier": "3.2.4"
     }
   } else {
-    package.devDependencies["@commitlint/cli"] ="^18.4.4",
-    package.devDependencies["commitlint-config-jira"]= "^1.6.4",
-    package.devDependencies["commitlint-plugin-jira-rules"]= "^1.6.4",
-    package.devDependencies["eslint"]= "^8.56.0",
-    package.devDependencies["eslint-config-prettier"]= "^9.1.0",
-    package.devDependencies["husky"]= "^8.0.0",
-    package.devDependencies["lint-staged"]= "^15.2.0",
+    package.devDependencies["@commitlint/cli"] ="^18.4.4"
+    package.devDependencies["commitlint-config-jira"]= "^1.6.4"
+    package.devDependencies["commitlint-plugin-jira-rules"]= "^1.6.4"
+    package.devDependencies["eslint"]= "^8.56.0"
+    package.devDependencies["eslint-config-prettier"]= "^9.1.0"
+    package.devDependencies["husky"]= "^8.0.0"
+    package.devDependencies["lint-staged"]= "^15.2.0"
     package.devDependencies["prettir"] = "3.2.4"
   }
 }
+
+const addScripts = (package, projectType) => {
+  if (!package.scripts) {
+    package.scripts = {
+      "lint": `eslint --ext .js --fix ./${projectType}`,
+      "prettier": `prettier --write ./${projectType} --ext .js`,
+      "prepare": "husky install"
+    }
+  } else {
+      package.scripts["lint"] =`eslint --ext .js --fix ./${projectType}`
+      package.scripts["prettier"]= `prettier --write ./${projectType} --ext .js`
+      package.scripts["prepare"]= "husky install"
+  }
+}
+
 const addLint  = async () =>  {
   const loading = ora('正在添加 lint 模板...')
+  const projectType = await select({
+    message: '请选择:',
+    choices: [
+      {
+        name: '小部件',
+        value: 'widget'
+      },
+      {
+        name: '小程序',
+        value: 'client'
+      },
+    ]
+  })
   loading.start()
   const root = process.cwd()
 
@@ -54,6 +82,8 @@ const addLint  = async () =>  {
     addDevDependencies(packageJSON)
 
     addLintStaged(packageJSON)
+
+    addScripts(packageJSON, projectType)
 
     fs.writeFileSync(`${root}/package.json`, JSON.stringify(packageJSON, null, 2))
   } else {
@@ -69,8 +99,9 @@ const addLint  = async () =>  {
       '  "version": "1.0.0",\n' +
       '  "main": "",\n' +
       '  "scripts": {\n' +
-      '    "lint": "eslint --ext .js --fix ./client",\n' +
-      '    "prettier": "prettier --write ./client --ext .js",\n' +
+      `    "lint": "eslint --ext .js --fix ./${projectType}",
+` +
+      `    "prettier": "prettier --write ./${projectType} --ext .js",\n` +
       '    "prepare": "husky install"\n' +
       '  },\n' +
       '  "devDependencies": {\n' +
