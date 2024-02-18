@@ -40,7 +40,7 @@ const addDevDependencies = (package) => {
     package.devDependencies["eslint-config-prettier"]= "^9.1.0"
     package.devDependencies["husky"]= "^8.0.0"
     package.devDependencies["lint-staged"]= "^15.2.0"
-    package.devDependencies["prettir"] = "3.2.4"
+    package.devDependencies["prettier"] = "3.2.4"
   }
 }
 
