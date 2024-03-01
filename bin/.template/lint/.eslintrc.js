@@ -20,7 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    indent: ['error', 4],
+    indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
@@ -28,7 +28,7 @@ module.exports = {
     'no-dupe-args': 2,
     'no-dupe-keys': 2,
     'no-extra-semi': 2,
-    eqeqeq: [2, 'always'],
+    eqeqeq: [0],
     'no-extra-label': 2,
     'block-spacing': 2,
     'func-names': 0,
