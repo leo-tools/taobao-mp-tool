@@ -1,6 +1,8 @@
 const {input, select} = require('@inquirer/prompts')
 const {copyFiles} = require('./utils')
 const ora = require('ora')
+const {mkdirSync} = require('fs')
+
 const create = async () => {
   const root = process.cwd()
   let projectName, projectType
@@ -32,7 +34,7 @@ const create = async () => {
     loading.start()
     const dirPath = `${root}/${projectName}`
     try {
-      fs.mkdirSync(dirPath, { recursive: true });
+      mkdirSync(dirPath, { recursive: true });
       copyFiles(`${__dirname}/.template/${projectType}`, dirPath)
       loading.succeed('项目创建成功!')
     } catch (error) {
