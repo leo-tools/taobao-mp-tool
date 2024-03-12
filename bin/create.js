@@ -2,6 +2,7 @@ const {input, select} = require('@inquirer/prompts')
 const {copyFiles} = require('./utils')
 const ora = require('ora')
 const {mkdirSync} = require('fs')
+const { execSync } = require('child_process')
 const fs = require('fs')
 
 const create = async () => {
@@ -41,6 +42,15 @@ const create = async () => {
       packageJSON.name = projectName
       fs.writeFileSync(`${dirPath}/package.json`, JSON.stringify(packageJSON, null, 2))
       loading.succeed('项目创建成功!')
+
+      loading.start('正在安装依赖...')
+      execSync('npm install', { cwd: dirPath, stdio: 'inherit' })
+      if (projectType === 'taobao-livecard') {
+        execSync('npm install', { cwd: `${dirPath}/widget`, stdio: 'inherit' })
+      } else if (projectType === 'qianniu-miniapp') {
+        execSync('npm install', { cwd: `${dirPath}/client`, stdio: 'inherit' })
+      }
+      loading.succeed('依赖安装成功!')
     } catch (error) {
       console.error('目录创建失败', error);
       return
