@@ -1,14 +1,11 @@
 {
-  "name": "taobao-mp",
+  "name": "taobao-livecard",
   "version": "1.0.0",
-  "description": "",
+  "main": "",
   "scripts": {
-    "lint": "eslint --ext .js --fix",
-    "prettier": "prettier --write --ext .js",
+    "lint": "eslint --ext .js --fix ./widget",
+    "prettier": "prettier --write ./widget --ext .js",
     "prepare": "husky install"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.4",
@@ -25,10 +22,5 @@
       "eslint --fix",
       "prettier --write"
     ]
-  },
-  "dependencies": {
-    "@tbmp/mp-cloud-sdk": "^1.5.7",
-    "antd-mini": "^2.28.1",
-    "gio-miniprogram-sdk-cdp": "^3.8.19"
   }
 }

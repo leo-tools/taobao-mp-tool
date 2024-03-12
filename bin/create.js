@@ -2,6 +2,7 @@ const {input, select} = require('@inquirer/prompts')
 const {copyFiles} = require('./utils')
 const ora = require('ora')
 const {mkdirSync} = require('fs')
+const fs = require('fs')
 
 const create = async () => {
   const root = process.cwd()
@@ -36,6 +37,9 @@ const create = async () => {
     try {
       mkdirSync(dirPath, { recursive: true });
       copyFiles(`${__dirname}/.template/${projectType}`, dirPath)
+      let packageJSON = require(`${dirPath}/package.json`)
+      packageJSON.name = projectName
+      fs.writeFileSync(`${dirPath}/package.json`, JSON.stringify(packageJSON, null, 2))
       loading.succeed('项目创建成功!')
     } catch (error) {
       console.error('目录创建失败', error);
