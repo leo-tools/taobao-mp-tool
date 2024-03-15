@@ -1,0 +1,13 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "defaultTitle": "千牛端",
+    "navigationBarTextStyle": "black",
+    "titleBarColor": "",
+    "transparentTitle": "always",
+    "navigationBarForceEnable": true,
+    "allowsBounceVertical": "NO"
+  }
+}

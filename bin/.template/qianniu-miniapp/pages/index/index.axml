@@ -1,0 +1,9 @@
+<view class="page-box">
+  <framework info="{{ info }}" menu="{{ menu }}" onChange="pathChange" defaultActiveKey="{{ defaultActiveKey }}" activeKey="{{ activeKey }}">
+    <view class="router-box">
+      <router-view>
+        <demo slot="demo" />
+      </router-view>
+    </view>
+  </framework>
+</view>

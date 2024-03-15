@@ -1,0 +1,11 @@
+page {
+  width:100vw;
+  word-break: normal;
+  text-align: justify;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

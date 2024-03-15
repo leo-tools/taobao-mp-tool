@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "modal-pro": "../modal-pro/modal-pro"
+  }
+}

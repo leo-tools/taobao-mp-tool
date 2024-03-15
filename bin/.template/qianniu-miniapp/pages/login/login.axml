@@ -1,0 +1,7 @@
+<view class="page-log">
+  <view class="page_log_countDown" a:if="{{day === 0 || day}}">
+    <text class="page_log_day">{{day?"距离session过期还有"+day+"天，请在有效时间内登录一次主账号": "session已过期， 请用主账号重新登陆授权"}}</text>
+    <text class="page_log_time" a:if="{{day!=0}}" >即将跳转至首页{{time}}秒</text>
+    <button size="large" type="primary"  onTap="toIndex">前往首页</button>
+  </view>
+</view>

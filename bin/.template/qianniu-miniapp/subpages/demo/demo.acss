@@ -1,0 +1,7 @@
+.box{
+  height:auto;
+  width: 50%;
+  background-color:#fff;
+  position:relative;
+  top: 10% !important;
+}

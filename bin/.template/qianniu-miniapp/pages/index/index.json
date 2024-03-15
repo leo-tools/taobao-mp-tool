@@ -1,0 +1,7 @@
+{
+  "component": false,
+  "usingComponents": {
+    "router-view": "miniapp-router/router-view/router-view",
+    "demo": "../../subpages/demo/demo"
+  }
+}

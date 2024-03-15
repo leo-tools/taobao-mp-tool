@@ -1,0 +1,9 @@
+<view>
+  <view class="image-uploader-wrapper">
+    <view class="img-item" style="{{style}}">
+      <image mode="aspectFit" class="style-config-image" src="{{formattedImgUrl}}"/>
+    </view>
+    <button onTap="handleGetImg">点击上传图片</button>
+  </view>
+  <image a:if="{{isShowLoadImage}}" style="opacity: 0; z-index: -10" mode="aspectFit" src="{{'data:image/jpg;base64,'+opacityImgUrl}}" onLoad="imageLoad" />
+</view>
