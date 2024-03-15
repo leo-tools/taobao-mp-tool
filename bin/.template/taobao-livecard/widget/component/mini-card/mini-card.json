@@ -1,8 +1,4 @@
 {
   "component": true,
-  "usingComponents": {
-    "card-header": "../card-header/card-header",
-    "product-home": "../product-home/product-home",
-    "product-detail": "../product-detail/product-detail"
-  }
+  "usingComponents": {}
 }
