@@ -22,6 +22,13 @@ npm install
 4. Select root directory as project path
 5. Select `小程序 PC 版` as project type
 
+### Development
+#### Add a tab page
+1.	Create a new page in the `tabpages` folder.
+2.	Include the new page as a component in `pages/index/index.json`.
+3.	Set up the route view in `pages/index/index.axml`.
+4.	Configure `routerConfig` and `menu` in `pages/index/index.js`.
+
 ### Release
 
 1. Checkout to `main` branch
