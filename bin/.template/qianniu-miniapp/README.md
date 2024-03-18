@@ -12,7 +12,6 @@
 
 ### Install dependencies
 ```
-cd widget
 npm install
 ```
 
