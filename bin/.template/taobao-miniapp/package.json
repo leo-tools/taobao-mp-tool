@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "eslint --ext .js --fix",
     "prettier": "prettier --write --ext .js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "preinstall": "npx only-allow npm"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -18,6 +19,7 @@
     "eslint-config-prettier": "^9.1.0",
     "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
+    "only-allow": "^1.2.1",
     "prettier": "3.2.4"
   },
   "lint-staged": {
