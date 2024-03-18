@@ -1,5 +1,5 @@
 {
   "publicComponents": {
-    "mini-card": "component/mini-card/mini-card"
+    "mini-card": "pages/mini-card/mini-card"
   }
 }
