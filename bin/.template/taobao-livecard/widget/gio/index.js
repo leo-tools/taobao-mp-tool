@@ -22,8 +22,8 @@ export const setGIOTrackingUser = (kyid, isMembers) => {
 }
 export const gdpPageOnTime = (item) => {
   const data = {
-    'widgetType_var': '礼品推荐',
-    'widgetName_var': '挑选礼物',
+    'widgetType_var': '',
+    'widgetName_var': '',
     'pageOnTime': item
   }
   console.log('-------------------------', data)
@@ -34,10 +34,10 @@ export const gdpPageOnTime = (item) => {
 export const gdpClickTrack = (payload) => {
   console.log('-------------------------', payload)
   const data = {
-    'pageUrl_var': '/widget/component/mini-card',
-    'pageType_var': '乐高官方旗舰店',
-    'pageName_var': '首页',
-    'widgetType_var': payload.type || '礼品推荐',
+    'pageUrl_var': '/pages/component/mini-card',
+    'pageType_var': '',
+    'pageName_var': '',
+    'widgetType_var': payload.type || '',
     'widgetName_var': payload.widgetName || '-',
     'widgetButton_var': payload.btnName || '-',
     'wigetPosition_var': payload.wigetPosition || '-',
@@ -50,10 +50,10 @@ export const gdpClickTrack = (payload) => {
 export const gdpViewTrack = (payload) => {
   console.log('--------payloadpayload------', payload)
   const data = {
-    'pageUrl_var': '/widget/component/mini-card',
-    'pageType_var': '乐高官方旗舰店',
-    'pageName_var': '首页',
-    'widgetType_var': payload.type || '礼品推荐',
+    'pageUrl_var': '/pages/component/mini-card',
+    'pageType_var': '',
+    'pageName_var': '',
+    'widgetType_var': payload.type || '',
     'widgetName_var': payload.widgetName || '-',
   }
   console.log('-------------------------', data)
