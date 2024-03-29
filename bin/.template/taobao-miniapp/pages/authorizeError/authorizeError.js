@@ -42,7 +42,7 @@ Page({
             } else {
               // 判断判断已经授权
               my.reLaunch({
-                url: '/pages/member/member-home/member-home',
+                url: '/pages/index/index',
               })
             }
           } else {
