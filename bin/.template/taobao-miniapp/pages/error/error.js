@@ -14,7 +14,7 @@ Page({
   events: {
     onBack() {
       my.reLaunch({
-        url: '/pages/member/member-home/member-home',
+        url: '/pages/index/index',
       })
     },
   },
