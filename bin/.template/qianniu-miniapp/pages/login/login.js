@@ -1,4 +1,4 @@
-import { makeRequest } from '../../apis'
+import { getSession } from '../../apis/login'
 
 Page({
   data: {
@@ -54,15 +54,7 @@ Page({
   },
 
   async getSessionTime() {
-    let opt = {
-      path: '',
-      method: 'get',
-      params: '',
-      body: {},
-      exts: {cloudAppId: ''}
-    }
-    // console.log("xxxxxxxxxx00000000xxxxxxxxxxxx", opt)
-    let res = await makeRequest(opt)
+    let res = await getSession()
     console.log(res,'ssssssssssss')
 
     // 计算得出session的有效时间
