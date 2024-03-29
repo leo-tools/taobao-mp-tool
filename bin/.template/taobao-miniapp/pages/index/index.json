@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "member-shop-center": "plugin://cemMember/member-shop-center"
+  }
+}

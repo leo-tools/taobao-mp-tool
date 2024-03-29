@@ -1,0 +1,26 @@
+<view class="err_page">
+  <view a:if="{{code == 404}}">
+    <view class="err_404" style="backgroundImage:url({{err}})"></view>
+   404
+  </view>
+  <view a:if="{{code == 500}}">
+    <view class="err_500" style="backgroundImage:url({{err}})"></view>
+   500
+  </view>
+  <view a:if="{{code == 600}}">
+    <view class="err_600" style="backgroundImage:url({{err}})"></view>
+   授权失败
+  </view>
+  <view a:if="{{code == 700}}">
+    <view class="err_700" style="backgroundImage:url({{err}})"></view>
+   网络出小差了
+  </view>
+  <view a:if="{{code == 1001}}" class="logo_error">
+    <view>
+      <image mode="widthFix" src="https://morefun-active.oss-cn-beijing.aliyuncs.com/LegoHome/erroricon.png"/>
+      <view class="text">
+      非常抱歉，页面出错啦请稍后再来
+      </view>
+    </view>
+  </view>
+</view>

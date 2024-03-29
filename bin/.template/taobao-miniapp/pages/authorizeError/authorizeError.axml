@@ -1,0 +1,8 @@
+<view class="authorizeError">
+  <image class="icon" mode="widthFix" src="https://morefun-active.oss-cn-beijing.aliyuncs.com/LegoHome/Illustration.png"/>
+  <view class="text">
+    未取得授权无法进入
+  </view>
+  <image class="btn" mode="widthFix" onTap="openAuthoriza" src="https://morefun-active.oss-cn-beijing.aliyuncs.com/LegoHome/r2/authorizeError.png"/>
+  <image class="btn1 btn" mode="widthFix" onTap="exit" src="https://morefun-active.oss-cn-beijing.aliyuncs.com/LegoHome/r2/exiterror.png"/>
+</view>

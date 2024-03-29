@@ -1,0 +1,24 @@
+.authorizeError{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  align-items:  center;
+}
+.icon{
+  width:400rpx;
+  margin-top:calc(100vh * 0.21)
+}
+.text{
+  font-size:28rpx;
+  line-height:44rpx;
+  color:#A0A0A0;
+  margin-top:48rpx;
+}
+.btn{
+  width:208rpx;
+  margin-top:32rpx;
+}
+.btn1{
+  margin-top:32rpx;
+}
