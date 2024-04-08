@@ -1,11 +1,13 @@
+// TODO 修改 host 和 path for gio tracking
 let envMap = {
-  dev: { api: '/dev', cloud: 'test' },
-  qa: { api: '/qa', cloud: 'test' },
-  online: { api: '', cloud: 'online' },
+  dev: { api: '/dev', env: 'test', host: 'a', path: '/dev/a' },
+  qa: { api: '/qa', env: 'test', host: 'b', path: '/qa/b' },
+  online: { api: '', env: 'online', host: 'c', path: 'c' },
 }
 export const env = envMap.online
 
 export const  makeRequest = async(data) => {
+  // TODO 修改项目默认cloudAppId
   const { path, method, headers= {}, params = '', body = {}, cloudAppId = '31406', exts = {} } = data
   try {
     const result = await $global.cloud.application.httpRequest({

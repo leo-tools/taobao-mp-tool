@@ -1,5 +1,5 @@
 import { GlobalData } from '../stores/global'
-
+// TODO 修改 host 和 path for gio tracking
 export const envMap = {
   dev: { api: '/dev', env: 'test', host: 'a', path: '/dev/a' },
   qa: { api: '/qa', env: 'test', host: 'b', path: '/qa/b' },
@@ -21,6 +21,7 @@ export const  makeRequest = async(data) => {
       },
       'params': data.params || '',
       'body': data.body || {},
+      // TODO 修改项目默认cloudAppId
       'exts': { 'cloudAppId': data.cloudAppId || '47460', 'timeout': 10000 }
     })
     console.log(result, '||||||||||||||||||||||||||', data.path, data.body)

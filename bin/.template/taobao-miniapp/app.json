@@ -10,6 +10,7 @@
   "plugins": {
     "cemMember": {
       "version": "*",
+      // TODO: 填写cemMember provider id
       "provider": ""
     }
   }

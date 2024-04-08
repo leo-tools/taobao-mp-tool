@@ -1,3 +1,4 @@
+// TODO 修改 host 和 path for gio tracking
 let envMap = {
   dev: {api:'/dev', env: 'test'},
   qa: {api: '/qa', env: 'test' },
@@ -18,7 +19,7 @@ export const makeRequest = async (data, state = false) => {
       },
       'params': data.params || '',
       'body': data.body || {},
-      //对于一个小程序关联多个云应用的场景，调用非默认云应用，需要指定对应的云应用Id,超时时间单位ms
+      // TODO 修改项目默认cloudAppId
       'exts': { 'cloudAppId': data.cloudAppId || '47460', 'timeout': 10000 }
     })
     console.log(state, '1111111111111111111111111111111111111请求成功', result)
