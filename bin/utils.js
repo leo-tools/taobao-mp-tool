@@ -18,6 +18,22 @@ const copyFiles = function(src, dest) {
   });
 }
 
+const copyFileContent = (sourceFile, destinationFile) => new Promise((resolve, reject) => {
+  fs.readFile(sourceFile, 'utf8', function(err, data){
+    if (err) {
+      reject(err)
+    }
+    fs.writeFile(destinationFile, data, 'utf8', function(err){
+      if (err) {
+        reject(err)
+      } else {
+        resolve()
+      }
+    });
+  });
+})
+
 module.exports = {
-  copyFiles
+  copyFiles,
+  copyFileContent
 }

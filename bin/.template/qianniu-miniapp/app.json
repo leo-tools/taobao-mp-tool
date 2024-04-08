@@ -1,5 +1,9 @@
 {
-  "pages": ["pages/login/login", "pages/index/index"],
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "bin/.template/page/index"
+  ],
   "window": {
     "defaultTitle": "千牛端",
     "navigationBarTextStyle": "black",
