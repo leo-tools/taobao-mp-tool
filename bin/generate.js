@@ -20,16 +20,16 @@ const generate = async (type, name, options) => {
   }
 
   if (options.dry) {
-    destinationFilePrePath = `${root}/${name}`
+    destinationFilePrePath = root
   } else {
     mkdirSync(path)
-    destinationFilePrePath = `${path}/index`
+    destinationFilePrePath = path
   }
 
-  await copyFileContent(`${templatePath}/index.js`, `${destinationFilePrePath}.js`)
-  await copyFileContent(`${templatePath}/index.json`, `${destinationFilePrePath}.json`)
-  await copyFileContent(`${templatePath}/index.axml`, `${destinationFilePrePath}.axml`)
-  await copyFileContent(`${templatePath}/index.acss`, `${destinationFilePrePath}.acss`)
+  await copyFileContent(`${templatePath}/index.js`, `${destinationFilePrePath}/${name}.js`)
+  await copyFileContent(`${templatePath}/index.json`, `${destinationFilePrePath}/${name}.json`)
+  await copyFileContent(`${templatePath}/index.axml`, `${destinationFilePrePath}/${name}.axml`)
+  await copyFileContent(`${templatePath}/index.acss`, `${destinationFilePrePath}/${name}.acss`)
 
   loading.succeed('生成成功')
 }
