@@ -1,6 +1,9 @@
 {
+  "defaultTitle": "",
+  "transparentTitle":"none",
+  "allowsBounceVertical":"NO",
+  "navigationBarTextStyle":"black",
+  "titleBarColor":"#fff",
   "backgroundColor": "#ffffff",
-  "backgroundColorTop": "#ffffff",
-  "backgroundColorBottom": "#ffffff",
   "usingComponents": {}
 }
