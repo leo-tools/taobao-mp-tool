@@ -1,5 +1,6 @@
 {
   "publicComponents": {
     "mini-card": "pages/mini-card/mini-card"
-  }
+  },
+  "enableLayoutNG": true
 }
