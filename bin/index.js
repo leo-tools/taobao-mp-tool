@@ -5,6 +5,7 @@ const package = require("../package.json");
 const {add} = require('./add')
 const {create} = require('./create')
 const {generate} = require('./generate')
+const {use} = require('./use')
 
 // 获取版本号
 const version = package.version;
@@ -28,5 +29,12 @@ program
   .argument('[name]')
   .option('-d, --dry', 'not create dir')
   .action((type, name, options) => generate(type, name, options));
+
+program
+  .command('use')
+  .alias('u')
+  .description('使用组件')
+  .argument('[name]')
+  .action((name, options) => use(name, options));
 
 program.parse(process.argv);
