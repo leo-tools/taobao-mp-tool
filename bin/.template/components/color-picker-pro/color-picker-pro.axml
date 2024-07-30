@@ -1,0 +1,11 @@
+<view>
+  <text style="margin-right: 10px">{{color}}</text>
+  <balloon
+      visible="{{ isShowColorPicker }}"
+      triggerType="click"
+      onClose="handleCloseColorPicker"
+  >
+    <button class="color-picker-trigger" slot="trigger" onTap="handleShowColorPicker">点击选择颜色</button>
+    <color-picker color="{{color}}" onChange="handleColorChange"/>
+  </balloon>
+</view>

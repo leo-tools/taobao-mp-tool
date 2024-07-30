@@ -1,0 +1,14 @@
+<overlay visible="{{visible}}" hasMask="{{true}}">
+  <scroll-view class="modal-pro-wrapper" scroll-y="{{true}}">
+    <view a:if="{{title}}" class="title">
+      {{title}}
+    </view>
+    <view class="body-wrapper">
+      <slot/>
+    </view>
+    <view a:if="{{showBtn}}" class="btn-wrapper">
+      <button class="btn" type="normal" onTap="handleCancel">取消</button>
+      <button class="btn" type="primary" onTap="handleConfirm">提交</button>
+    </view>
+  </scroll-view>
+</overlay>

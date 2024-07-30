@@ -1,0 +1,19 @@
+.image-uploader-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.image-uploader-wrapper .img-item {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+}
+
+.style-config-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+}
