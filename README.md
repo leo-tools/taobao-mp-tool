@@ -9,34 +9,34 @@ npm install -g @leo-tools/tmp
 
 ### 创建小程序
 ```bash
-// 创建淘宝小程序
+# 创建淘宝小程序
 tmp create taobao-miniapp 
 
-// 创建淘宝小部件
+# 创建淘宝小部件
 tmp create taobao-livecard
 
-// 创建千牛小程序
+# 创建千牛小程序
 tmp create qianniu-miniapp
 ```
 
 ### 生成页面/组件
 ```bash
-// 创建页面
+# 创建页面
 tmp g p
 
-// 创建组件
+# 创建组件
 tmp g c
 ```
 
 ### 增加 feature
 ```bash
-// 增加 lint
+# 增加 lint
 tmp add lint
 ```
 
 ### 使用组件
 ```bash
-// 使用组件
+# 使用组件
 tmp use [组件名]
 ```
 
