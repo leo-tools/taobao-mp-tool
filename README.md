@@ -42,9 +42,9 @@ tmp use [组件名]
 
 #### 组件列表
 
-| 组件名              | 描述    | 使用                         | 平台    |
-|------------------|-------|----------------------------|-------|
-| color-picker-pro | 颜色选择器 | `tmp use color-picker-pro` | 千牛小程序 |
-| image-uploader   | 图片上传  | `tmp use image-uploader`   | 千牛小程序 |
-| modal-pro        | 弹窗    | `tmp use modal-pro`        | 千牛小程序 |
+| 组件名                       | 描述    | 使用                                  | 平台    |
+|---------------------------|-------|-------------------------------------|-------|
+| @qianniu/color-picker-pro | 颜色选择器 | `tmp use @qianniu/color-picker-pro` | 千牛小程序 |
+| @qianniu/image-uploader   | 图片上传  | `tmp use @qianniu/image-uploader`   | 千牛小程序 |
+| @qianniu/modal-pro        | 弹窗    | `tmp use @qianniu/modal-pro`        | 千牛小程序 |
 
